@@ -4,13 +4,13 @@ pub mod part2;
 
 use crate::{Output, Part};
 
-pub type Input = Vec<Vec<u32>>;
+pub type Input = Vec<u32>;
 
 pub fn run(part: Part) -> Output {
-    let input = input::read();
+    let mut input = input::read();
     match part {
-        Part::One => part1::solve(&input),
-        Part::Two => part2::solve(&input),
+        Part::One => part1::solve(&mut input),
+        Part::Two => part2::solve(&mut input),
     }
 }
 
@@ -21,14 +21,14 @@ mod tests {
     #[test]
     fn check_answer_one() {
         let result = run(Part::One);
-        println!("{result}");
+        // println!("{result}");
         assert_eq!(result, 72602);
     }
 
     #[test]
     fn check_answer_two() {
         let result = run(Part::Two);
-        println!("{result}");
+        // println!("{result}");
         assert_eq!(result, 207410);
     }
 }

@@ -2,9 +2,8 @@ use crate::day01::Input;
 
 const INPUT: &str = include_str!("../../input/01/input.txt");
 
+/// Read and parse the input
 pub fn read() -> Input {
-    // println!("{}", INPUT);
-
     let i: Vec<&str> = INPUT.split("\n\n").collect();
     let mut o: Vec<Vec<u32>> = vec![vec![]];
 
@@ -17,10 +16,13 @@ pub fn read() -> Input {
         o.push(out);
     }
 
-    // let input: Vec<u32> = INPUT.split("\n")
-    //     .map(|x| x.trim())
-    //     .filter(|x| !x.is_empty())
-    //     .map(|x| x.parse().unwrap())
-    //     .collect();
-    o
+    let mut inter: Vec<u32> = Vec::with_capacity(256);
+    for i in 0..o.len() {
+        let mut x = 0;
+        for j in 0..o[i].len() {
+            x += o[i][j];
+        }
+        inter.push(x);
+    }
+    inter
 }

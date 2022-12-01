@@ -6,13 +6,13 @@ use criterion::{black_box, criterion_group, criterion_main, Criterion};
 //-------------------------------------------------------------------------------------
 
 pub fn benchmark_day01_part01(c: &mut Criterion) {
-    let input = black_box(day01::input::read());
-    c.bench_function("Day 01, Part 1", |b| b.iter(|| day01::part1::solve(&input)));
+    let mut input = black_box(day01::input::read());
+    c.bench_function("Day 01, Part 1", |b| b.iter(|| day01::part1::solve(&mut input)));
 }
 
 pub fn benchmark_day01_part02(c: &mut Criterion) {
-    let input = black_box(day01::input::read());
-    c.bench_function("Day 01, Part 2", |b| b.iter(|| day01::part2::solve(&input)));
+    let mut input = black_box(day01::input::read());
+    c.bench_function("Day 01, Part 2", |b| b.iter(|| day01::part2::solve(&mut input)));
 }
 
 criterion_group!(day01, benchmark_day01_part01, benchmark_day01_part02);
