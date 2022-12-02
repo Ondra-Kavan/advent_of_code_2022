@@ -15,7 +15,11 @@ pub fn benchmark_day01_part02(c: &mut Criterion) {
     c.bench_function("Day 01, Part 2", |b| b.iter(|| day01::part2::solve(&mut input)));
 }
 
-criterion_group!(day01, benchmark_day01_part01, benchmark_day01_part02);
+pub fn benchmark_day01_input(c: &mut Criterion) {
+    c.bench_function("Day 01, Input", |b| b.iter(|| day01::input::read()));
+}
+
+criterion_group!(day01, benchmark_day01_part01, benchmark_day01_part02, benchmark_day01_input);
 
 //-------------------------------------------------------------------------------------
 //Day 02-------------------------------------------------------------------------------
@@ -31,7 +35,11 @@ pub fn benchmark_day02_part02(c: &mut Criterion) {
     c.bench_function("Day 02, Part 2", |b| b.iter(|| day02::part2::solve(&input)));
 }
 
-criterion_group!(day02, benchmark_day02_part01, benchmark_day02_part02);
+pub fn benchmark_day02_input(c: &mut Criterion) {
+    c.bench_function("Day 02, Input", |b| b.iter(|| day02::input::read()));
+}
+
+criterion_group!(day02, benchmark_day02_part01, benchmark_day02_part02, benchmark_day02_input);
 
 //-------------------------------------------------------------------------------------
 //Day 03-------------------------------------------------------------------------------
