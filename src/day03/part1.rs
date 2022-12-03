@@ -1,4 +1,5 @@
 // I was really stuck on this one
+// I still need to learn more about Rust :/
 // CREDIT: https://github.com/LinAGKar/advent-of-code-2022-rust/blob/main/day3a/src/main.rs
 
 use std::str::Chars;
